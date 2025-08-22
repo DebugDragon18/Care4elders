@@ -33,7 +33,7 @@ const features = [
   {
     title: 'Order Essentials',
     description: "Medicine & groceries",
-    href: '/ordering',
+    href: 'https://www.bigbasket.com/',
     icon: ShoppingCart,
     color: 'text-green-500',
   },

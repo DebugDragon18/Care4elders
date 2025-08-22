@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { PT_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import SplashScreen from '@/components/splash-screen';
+import { Suspense } from 'react';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -34,6 +36,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${ptSans.variable} font-body antialiased`}>
+        <Suspense fallback={null}>
+          <SplashScreen />
+        </Suspense>
         {children}
         <Toaster />
       </body>

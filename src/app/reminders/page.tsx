@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bell, Clock, Check } from 'lucide-react';
+import Image from 'next/image';
 
 const reminders = [
   { time: '8:00 AM', medicine: 'Metformin', dosage: '1 tablet' },
@@ -20,6 +21,18 @@ export default function RemindersPage() {
           </p>
         </div>
       </header>
+      
+      <Card className='overflow-hidden'>
+        <div className="relative h-40 w-full">
+           <Image 
+            src="https://placehold.co/600x400.png"
+            alt="Pills and calendar"
+            layout="fill"
+            objectFit="cover"
+            data-ai-hint="pills calendar"
+          />
+        </div>
+      </Card>
 
       <div className="space-y-4">
         {reminders.map((reminder, index) => (

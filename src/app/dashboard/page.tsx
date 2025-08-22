@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Card,
   CardHeader,
@@ -62,12 +63,23 @@ const features = [
 export default function Dashboard() {
   return (
     <div className="flex flex-col gap-6">
-      <header>
-        <h1 className="text-4xl font-bold">Hello!</h1>
-        <p className="text-lg text-muted-foreground">
-          How can we help you today?
-        </p>
-      </header>
+       <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src="https://placehold.co/600x400.png"
+            alt="Happy senior couple"
+            layout="fill"
+            objectFit="cover"
+            data-ai-hint="happy senior couple"
+            className="brightness-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
+            <h1 className="text-3xl sm:text-4xl font-bold">Hello!</h1>
+            <p className="text-md sm:text-lg">
+              How can we help you today?
+            </p>
+          </div>
+        </div>
       <div className="grid grid-cols-2 gap-4 sm:gap-6">
         {features.map((feature) => (
           <Link href={feature.href} key={feature.title} className="group">

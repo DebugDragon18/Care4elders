@@ -5,17 +5,17 @@ import Image from 'next/image';
 import { Pill, ShoppingCart, Carrot } from 'lucide-react';
 
 const medicines = [
-  { name: 'Aspirin 81mg', price: '$5.99', image: 'https://placehold.co/200x200.png', hint: 'pills medicine' },
-  { name: 'Ibuprofen 200mg', price: '$8.49', image: 'https://placehold.co/200x200.png', hint: 'pills headache' },
-  { name: 'Multivitamins', price: '$12.99', image: 'https://placehold.co/200x200.png', hint: 'vitamins supplements' },
-  { name: 'Calcium Tablets', price: '$9.99', image: 'https://placehold.co/200x200.png', hint: 'vitamins bones' },
+  { name: 'Aspirin 81mg', price: '₹499', image: 'https://placehold.co/200x200.png', hint: 'pills medicine' },
+  { name: 'Ibuprofen 200mg', price: '₹699', image: 'https://placehold.co/200x200.png', hint: 'pills headache' },
+  { name: 'Multivitamins', price: '₹1099', image: 'https://placehold.co/200x200.png', hint: 'vitamins supplements' },
+  { name: 'Calcium Tablets', price: '₹849', image: 'https://placehold.co/200x200.png', hint: 'vitamins bones' },
 ];
 
 const groceries = [
-  { name: 'Milk', price: '$3.49', image: 'https://placehold.co/200x200.png', hint: 'milk dairy' },
-  { name: 'Bread', price: '$2.99', image: 'https://placehold.co/200x200.png', hint: 'bread bakery' },
-  { name: 'Eggs', price: '$4.29', image: 'https://placehold.co/200x200.png', hint: 'eggs breakfast' },
-  { name: 'Bananas', price: '$1.99', image: 'https://placehold.co/200x200.png', hint: 'bananas fruit' },
+  { name: 'Milk', price: '₹299', image: 'https://placehold.co/200x200.png', hint: 'milk dairy' },
+  { name: 'Bread', price: '₹249', image: 'https://placehold.co/200x200.png', hint: 'bread bakery' },
+  { name: 'Eggs', price: '₹359', image: 'https://placehold.co/200x200.png', hint: 'eggs breakfast' },
+  { name: 'Bananas', price: '₹169', image: 'https://placehold.co/200x200.png', hint: 'bananas fruit' },
 ];
 
 const ProductCard = ({ name, price, image, hint }: { name: string, price: string, image: string, hint: string }) => (

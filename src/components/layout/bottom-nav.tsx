@@ -16,7 +16,7 @@ const navItems = [
   { href: '/reminders', icon: Bell, label: 'Reminders' },
   { href: 'https://www.bigbasket.com/', icon: ShoppingCart, label: 'Orders' },
   { href: '/diet-planner', icon: UtensilsCrossed, label: 'Diet Plan' },
-  { href: '/gps-tracker', icon: MapPin, label: 'Tracker' },
+  { href: 'https://www.google.com/maps', icon: MapPin, label: 'Tracker' },
 ];
 
 export default function BottomNav() {

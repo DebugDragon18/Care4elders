@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useFormStatus } from 'react';
 import { getDietSuggestions } from '@/app/diet-planner/actions';
 import { Button } from '@/components/ui/button';
 import {
@@ -47,7 +47,7 @@ const MealSection = ({ title, suggestions }: { title: string, suggestions: strin
 
 export default function DietPlannerForm() {
   const initialState: DietPlannerState = { suggestions: null, error: null };
-  const [state, dispatch] = useFormState(getDietSuggestions, initialState);
+  const [state, dispatch] = useActionState(getDietSuggestions, initialState);
 
   const formatSuggestions = (text: string | undefined) => {
     if (!text) return { breakfast: [], lunch: [], dinner: [] };

@@ -30,7 +30,7 @@ const AiDietSuggestionsOutputSchema = z.object({
   mealSuggestions: z
     .string()
     .describe(
-      'A list of meal suggestions tailored to the user, including breakfast, lunch, and dinner options.'
+      'A detailed meal plan for one day, including breakfast, lunch, and dinner. Each meal should have specific food items and quantities.'
     ),
 });
 export type AiDietSuggestionsOutput = z.infer<typeof AiDietSuggestionsOutputSchema>;
@@ -45,17 +45,20 @@ const prompt = ai.definePrompt({
   name: 'aiDietSuggestionsPrompt',
   input: {schema: AiDietSuggestionsInputSchema},
   output: {schema: AiDietSuggestionsOutputSchema},
-  prompt: `You are a registered dietitian creating personalized meal suggestions for users.
+  prompt: `You are an expert nutritionist creating a personalized one-day meal plan for a senior citizen.
 
-  Based on the user's age, health conditions, and dietary needs, provide tailored meal suggestions for breakfast, lunch, and dinner.
+  Based on the user's age, health conditions, and dietary needs, provide a detailed meal plan for breakfast, lunch, and dinner.
 
-  Age: {{{age}}}
-  Health Conditions: {{{healthConditions}}}
-  Dietary Needs: {{{dietaryNeeds}}}
+  User Profile:
+  - Age: {{{age}}}
+  - Health Conditions: {{{healthConditions}}}
+  - Dietary Needs: {{{dietaryNeeds}}}
 
-  Provide a diverse range of meal suggestions, considering nutritional balance and taste.
-  Format the output as a list of meal options for each meal (breakfast, lunch and dinner).
-  Each suggestion should be one sentence long and should provide at least 3 suggestions for each meal.
+  Instructions:
+  1.  Create a balanced and healthy meal plan for a single day.
+  2.  For each meal (Breakfast, Lunch, Dinner), list specific food items and suggest appropriate portion sizes (e.g., "1 cup of oatmeal", "100g grilled chicken breast").
+  3.  Ensure the suggestions are simple, easy to prepare, and suitable for an elderly person.
+  4.  Format the output clearly with headings for "Breakfast:", "Lunch:", and "Dinner:". Provide at least two food items for each meal.
 `,
 });
 

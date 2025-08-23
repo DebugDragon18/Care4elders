@@ -54,7 +54,7 @@ const features = [
   {
     title: 'Appointments',
     description: "Manage doctor visits",
-    href: '#',
+    href: 'https://www.apollo247.com/specialties',
     icon: Stethoscope,
     color: 'text-indigo-500',
   },

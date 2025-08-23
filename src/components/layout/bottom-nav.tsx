@@ -31,7 +31,7 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
-              target={href.startsWith('http') ? '_blank' : '_self'}
+              target={href.startsWith('http') ? '_self' : '_self'}
               className={cn(
                 'inline-flex flex-col items-center justify-center px-5 hover:bg-muted group',
                 isActive

@@ -82,7 +82,7 @@ export default function Dashboard() {
         </div>
       <div className="grid grid-cols-2 gap-4 sm:gap-6">
         {features.map((feature) => (
-          <Link href={feature.href} key={feature.title} className="group" target={feature.href.startsWith('http') ? '_blank' : '_self'}>
+          <Link href={feature.href} key={feature.title} className="group" target={feature.href.startsWith('http') ? '_self' : '_self'}>
             <Card className="h-full transform transition-transform duration-200 group-hover:scale-105 group-hover:shadow-lg">
               <CardHeader className="flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <feature.icon className={`h-12 w-12 mb-3 ${feature.color}`} />

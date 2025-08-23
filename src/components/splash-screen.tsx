@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 export default function SplashScreen() {
@@ -27,14 +26,9 @@ export default function SplashScreen() {
       )}
     >
       <div className="animate-pulse">
-        <Image
-          src="/logo.png"
-          alt="Care4Elders Logo"
-          width={250}
-          height={100}
-          priority
-          className="h-auto"
-        />
+        <h1 className="text-5xl font-bold text-primary tracking-tight">
+          ElderEase
+        </h1>
       </div>
     </div>
   );

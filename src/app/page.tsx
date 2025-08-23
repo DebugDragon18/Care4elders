@@ -14,13 +14,11 @@ export default function Home() {
       />
       <div className="w-full max-w-md z-10">
         <header className="text-center mb-8 flex flex-col items-center">
-          <Image 
-            src="/logo.png"
-            alt="Care4Elders Logo"
-            width={250}
-            height={100}
-            className='mb-4 h-auto'
-          />
+          <div className="mb-4">
+            <h1 className="text-5xl font-bold text-primary tracking-tight">
+              ElderEase
+            </h1>
+          </div>
           <p className="text-muted-foreground text-lg mt-2">
             Your trusted companion for a simpler, safer life.
           </p>

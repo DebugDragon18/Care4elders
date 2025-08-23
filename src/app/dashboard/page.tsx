@@ -7,7 +7,7 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import {
-  Bell,
+  Pill,
   Siren,
   ShoppingCart,
   UtensilsCrossed,
@@ -17,10 +17,10 @@ import {
 
 const features = [
   {
-    title: 'Medicine Reminders',
-    description: "Never miss a dose",
+    title: 'Pharmacy store',
+    description: "Order medicines online",
     href: 'https://pharmeasy.in/online-medicine-order?isSEM=true&utm_source=google&utm_medium=cpc&utm_campaign=ITW_Generic_FP_Medical_Exact_TROAS&utm_content={adgroupname}&utm_creative=730076067580&gad_source=1&gad_campaignid=22145937534&gbraid=0AAAAADBjd5-BEoV73ao3hu7zgT_x7-BPD&gclid=Cj0KCQjwqqDFBhDhARIsAIHTlkvEuO3WNAQAlCDjMdUUWFnDQsJ8YNEiKw33bFaHERP-ImJ1uOENUNMaAjjREALw_wcB',
-    icon: Bell,
+    icon: Pill,
     color: 'text-blue-500',
   },
   {

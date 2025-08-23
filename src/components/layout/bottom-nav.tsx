@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Home' },
   { href: '/reminders', icon: Bell, label: 'Reminders' },
-  { href: '/ordering', icon: ShoppingCart, label: 'Orders' },
+  { href: 'https://www.bigbasket.com/', icon: ShoppingCart, label: 'Orders' },
   { href: '/diet-planner', icon: UtensilsCrossed, label: 'Diet Plan' },
   { href: '/gps-tracker', icon: MapPin, label: 'Tracker' },
 ];
@@ -31,6 +31,7 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
+              target={href.startsWith('http') ? '_blank' : '_self'}
               className={cn(
                 'inline-flex flex-col items-center justify-center px-5 hover:bg-muted group',
                 isActive

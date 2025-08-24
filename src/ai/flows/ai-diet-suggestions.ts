@@ -58,7 +58,7 @@ const prompt = ai.definePrompt({
   1.  Create a balanced and healthy meal plan for a single day.
   2.  For each meal (Breakfast, Lunch, Dinner), list specific food items and suggest appropriate portion sizes (e.g., "1 cup of oatmeal", "100g grilled chicken breast").
   3.  Ensure the suggestions are simple, easy to prepare, and suitable for an elderly person.
-  4.  Format the output clearly with headings for "Breakfast:", "Lunch:", and "Dinner:". Provide at least two food items for each meal.
+  4.  Format the output clearly with headings for "Breakfast:", "Lunch:", and "Dinner:".
 `,
 });
 

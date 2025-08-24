@@ -1,9 +1,14 @@
-import Image from 'next/image';
-import { MapPin } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+'use client';
 
-export default function GpsTrackerPage() {
+import { MapPin } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Suspense } from 'react';
+import Map from '@/components/map';
+
+function GpsTrackerContent() {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
   return (
     <div className="space-y-6">
       <header className="flex items-center gap-3">
@@ -19,14 +24,13 @@ export default function GpsTrackerPage() {
       <Card>
         <CardContent className="p-4 md:p-6 text-center space-y-4">
           <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-            <Image
-              src="https://placehold.co/600x400.png"
-              alt="Map"
-              width={600}
-              height={400}
-              data-ai-hint="map location"
-              className="w-full h-full object-cover"
-            />
+            {apiKey ? (
+              <Map apiKey={apiKey} />
+            ) : (
+              <div className="w-full h-full bg-muted flex items-center justify-center">
+                <p className="text-muted-foreground">Google Maps API key is missing.</p>
+              </div>
+            )}
           </div>
           <h2 className="text-2xl font-semibold">Your Location is Shared</h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
@@ -39,4 +43,13 @@ export default function GpsTrackerPage() {
       </Card>
     </div>
   );
+}
+
+
+export default function GpsTrackerPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <GpsTrackerContent />
+    </Suspense>
+  )
 }

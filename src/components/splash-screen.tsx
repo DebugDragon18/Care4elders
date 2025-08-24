@@ -27,7 +27,7 @@ export default function SplashScreen() {
     >
       <div className="animate-pulse">
         <h1 className="text-5xl font-bold text-primary tracking-tight">
-          Care4elders
+          ElderEase
         </h1>
       </div>
     </div>

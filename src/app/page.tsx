@@ -15,7 +15,7 @@ export default function Home() {
         <header className="text-center mb-8 flex flex-col items-center">
           <div className="mb-4">
             <h1 className="text-5xl font-bold text-primary tracking-tight">
-              Care4elders
+              ElderEase
             </h1>
           </div>
           <p className="text-muted-foreground text-lg mt-2">

@@ -14,6 +14,7 @@ interface MapProps {
 
 export default function Map({ apiKey }: MapProps) {
   const [currentPosition, setCurrentPosition] = useState<{ lat: number; lng: number } | null>(null);
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -26,19 +27,29 @@ export default function Map({ apiKey }: MapProps) {
         (position) => {
           const { latitude, longitude } = position.coords;
           setCurrentPosition({ lat: latitude, lng: longitude });
+          setLocationError(null);
         },
-        () => {
+        (error) => {
           // Handle error or user denial
-          console.error("Error getting user's location");
-          // As a fallback, let's use a default location
-          setCurrentPosition({ lat: 37.7749, lng: -122.4194 }); 
+          console.error("Error getting user's location:", error.message);
+          setLocationError('Location access was denied. Please enable location permissions in your browser settings to see your current position.');
         }
       );
+    } else {
+      setLocationError('Geolocation is not supported by this browser.');
     }
   }, []);
 
-  if (!isLoaded) return <div>Loading Map...</div>;
-  if (!currentPosition) return <div>Getting location...</div>;
+  if (locationError) {
+    return (
+      <div className="flex h-full w-full items-center justify-center bg-muted p-4 text-center">
+        <p className="text-muted-foreground">{locationError}</p>
+      </div>
+    );
+  }
+
+  if (!isLoaded) return <div className="flex h-full w-full items-center justify-center bg-muted"><p>Loading Map...</p></div>;
+  if (!currentPosition) return <div className="flex h-full w-full items-center justify-center bg-muted"><p>Getting location...</p></div>;
 
   return (
     <GoogleMap

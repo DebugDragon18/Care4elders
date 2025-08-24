@@ -16,6 +16,14 @@ export async function getDietSuggestions(
   prevState: DietPlannerState,
   formData: FormData
 ): Promise<DietPlannerState> {
+  if (!process.env.GEMINI_API_KEY) {
+    return {
+      suggestions: null,
+      error:
+        'The AI Diet Planner is not configured. An API key for Gemini is required.',
+    };
+  }
+
   const validatedFields = DietFormSchema.safeParse({
     age: formData.get('age'),
     healthConditions: formData.get('healthConditions'),

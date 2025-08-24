@@ -8,6 +8,7 @@ import Map from '@/components/map';
 
 function GpsTrackerContent() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const isApiKeySet = apiKey && apiKey !== 'YOUR_API_KEY_HERE';
 
   return (
     <div className="space-y-6">
@@ -24,11 +25,14 @@ function GpsTrackerContent() {
       <Card>
         <CardContent className="p-4 md:p-6 text-center space-y-4">
           <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-            {apiKey ? (
+            {isApiKeySet ? (
               <Map apiKey={apiKey} />
             ) : (
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <p className="text-muted-foreground">Google Maps API key is missing.</p>
+              <div className="w-full h-full bg-muted flex flex-col items-center justify-center p-4">
+                <h3 className="text-xl font-semibold mb-2">Google Maps Not Configured</h3>
+                <p className="text-muted-foreground text-center">
+                  To use the GPS Tracker, please add your Google Maps API key to the <code className="bg-gray-200 p-1 rounded-sm text-sm">.env</code> file.
+                </p>
               </div>
             )}
           </div>

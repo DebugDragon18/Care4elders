@@ -45,6 +45,7 @@ const prompt = ai.definePrompt({
   name: 'aiDietSuggestionsPrompt',
   input: {schema: AiDietSuggestionsInputSchema},
   output: {schema: AiDietSuggestionsOutputSchema},
+  model: 'gemini-1.5-flash-latest',
   prompt: `You are an expert nutritionist creating a personalized one-day meal plan for a senior citizen.
 
   Based on the user's age, health conditions, and dietary needs, provide a detailed meal plan for breakfast, lunch, and dinner.

@@ -12,7 +12,7 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'ElderEase',
+  title: 'Care4Elders',
   description: 'Complete digital assistance for senior citizens.',
 };
 

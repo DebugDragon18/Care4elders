@@ -1,24 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { HeartHandshake } from 'lucide-react';
 
-export default function SplashScreen() {
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 3000); // Show splash screen for 3 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!show) {
-    return null;
-  }
-
+export default function SplashScreenOne() {
   return (
     <div
       className={cn(

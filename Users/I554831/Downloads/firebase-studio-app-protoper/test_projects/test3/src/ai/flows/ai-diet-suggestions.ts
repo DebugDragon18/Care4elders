@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { googleAI } from '@genkit-ai/google-genai';
 
 const AiDietSuggestionsInputSchema = z.object({
   age: z.number().describe('The age of the user.'),
@@ -45,7 +46,7 @@ const prompt = ai.definePrompt({
   name: 'aiDietSuggestionsPrompt',
   input: {schema: AiDietSuggestionsInputSchema},
   output: {schema: AiDietSuggestionsOutputSchema},
-  model: 'gemini-1.5-flash-latest',
+  model: googleAI.model('gemini-1.5-flash-latest'),
   prompt: `You are an expert nutritionist creating a personalized one-day meal plan for a senior citizen.
 
   Based on the user's age, health conditions, and dietary needs, provide a detailed meal plan for breakfast, lunch, and dinner.

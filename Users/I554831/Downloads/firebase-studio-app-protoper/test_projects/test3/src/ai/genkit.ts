@@ -1,8 +1,7 @@
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
-import {config} from 'dotenv';
+'use server';
 
-config({ path: '.env' });
+import {genkit} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 export const ai = genkit({
   plugins: [

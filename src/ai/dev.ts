@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
-config();
+config({ path: '.env' });
 
-import '@/ai/flows/ai-diet-suggestions.ts';
+import '@/ai/flows/ai-diet-suggestions';

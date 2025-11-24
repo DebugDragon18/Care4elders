@@ -1,5 +1,6 @@
-# Firebase Studio
+Care4Elder – Elder’s Assistant App
 
-This is a NextJS starter in Firebase Studio.
+Your smart companion for elderly care, safety & well-being
 
-To get started, take a look at src/app/page.tsx.
+Care4Elder is a mobile application designed to support senior citizens in their daily life by providing assistance, safety features, health reminders, and an easy communication channel with caregivers or family members.
+The app focuses on simplicity, clarity, and reliability—making technology accessible for elders.

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center bg-background p-4 sm:p-8 text-center">
       <Image
-        src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Creative background"
         fill
         className="absolute inset-0 z-0 object-cover opacity-90"
